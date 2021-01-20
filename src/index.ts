@@ -22,11 +22,11 @@ const rc = new RingCentral({
   webSocketExtension.subscribe(
     ['/restapi/v1.0/account/~/extension/~/telephony/sessions'],
     async (event: ExtensionTelephonySessionsEvent) => {
-      console.log(JSON.stringify(event, null, 2));
+      // console.log(JSON.stringify(event, null, 2));
       const party = event.body!.parties![0];
       if (
         party.direction === 'Outbound' &&
-        party.status!.code === 'Proceeding'
+        (party.status!.code === 'Setup' || party.status!.code === 'Proceeding')
       ) {
         console.log('forward the call');
         const r = await rc

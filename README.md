@@ -30,3 +30,8 @@ The call will be forwarded to `RINGCENTRAL_FORWARD_TO_NUMBER`.
 ## Actual behavior
 
 `RINGCENTRAL_FORWARD_TO_NUMBER` web phone doesn't ring at all.
+
+
+## Other Information
+
+Forward to other numbers which are not from the same account, however, works.
